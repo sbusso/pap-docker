@@ -1,0 +1,30 @@
+nginx:
+  build: nginx/.
+  ports:
+    - 9980:80
+  links:
+    - php
+  volumes:
+    - ./nginx/conf.d:/etc/nginx/conf.d
+  volumes_from:
+    - php
+
+
+php:
+  build: fpm/.
+  expose:
+    - 9000
+  volumes:
+    - ./www:/www
+  links:
+    - db
+
+db:
+  image: sbusso/mariadb
+  volumes:
+    - /var/lib/mysql/
+    - ./data:/data
+  expose:
+    - 3306
+  env_file:
+    - db.env
