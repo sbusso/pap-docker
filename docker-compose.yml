@@ -1,17 +1,18 @@
 nginx:
-  build: nginx/.
+  image: nginx
   ports:
     - 9980:80
   links:
     - php
   volumes:
     - ./nginx/conf.d:/etc/nginx/conf.d
+
   volumes_from:
     - php
 
 
 php:
-  build: fpm/.
+  build: php-fpm-ion/.
   expose:
     - 9000
   volumes:
