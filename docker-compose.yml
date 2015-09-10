@@ -12,7 +12,7 @@ nginx:
 
 
 php:
-  build: php-fpm-ion/.
+  image: sbusso/php-fpm-ion
   expose:
     - 9000
   volumes:
