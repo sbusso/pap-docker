@@ -5,7 +5,7 @@ If you want to try PAP, go for their hosted version, dont bother buying their pl
 
 * first `git clone https://github.com/sbusso/pap-docker`
 * configure and rename db.env.example to db.env
-* put PAP code website and customization (/accounts/ if imported) in /wwww
+* put PAP code and customization (/accounts/ if imported) in /wwww
 * import data with from /data/ with sql
 * then execute `docker-compose`.
 
